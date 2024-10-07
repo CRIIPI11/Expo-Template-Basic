@@ -30,5 +30,18 @@ declare module "@rneui/themed" {
     tabBackground: string;
     tabIconDefault: string;
     tabIconSelected: string;
+    info: string;
+    palette: {
+      accents0: string;
+      accents1: string;
+      accents2: string;
+      accents3: string;
+      accents4: string;
+      accents5: string;
+      accents6: string;
+      accents7: string;
+      accents8: string;
+      accents9: string;
+    };
   }
 }
