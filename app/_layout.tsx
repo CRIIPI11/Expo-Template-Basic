@@ -61,6 +61,111 @@ export default function RootLayout() {
         accents9: "#000",
       },
     },
+    components: {
+      Text(props, theme) {
+        return {
+          style: {
+            color: theme.colors.text,
+            fontWeight: props.bold ? "bold" : "normal",
+            marginVertical: 4,
+            ...(props.h5 && { fontSize: 16 }),
+            ...(props.h5Style && props.h5Style),
+            ...(props.color && { color: props.color }),
+          },
+        };
+      },
+      Button(props, theme) {
+        return {
+          titleStyle: {
+            fontWeight: "bold",
+            marginHorizontal: 8,
+          },
+          buttonStyle: {
+            borderRadius: 8,
+          },
+          containerStyle: {
+            marginVertical: 8,
+            marginHorizontal: 4,
+          },
+          activeOpacity: 0.8,
+          size: "lg",
+        };
+      },
+      SearchBar(props, theme) {
+        return {
+          inputContainerStyle: {
+            backgroundColor: theme.colors.grey4,
+          },
+          containerStyle: {
+            backgroundColor: "transparent",
+            borderTopWidth: 0,
+            borderBottomWidth: 0,
+            padding: 4,
+          },
+          placeholder: "Search...",
+          round: true,
+        };
+      },
+      Input(props, theme) {
+        return {
+          inputContainerStyle: {
+            ...(props.mode === "outlined" && {
+              backgroundColor: theme.colors.grey5,
+              borderColor: theme.colors.palette.accents3,
+              borderWidth: 1,
+              borderRadius: 8,
+              paddingHorizontal: 8,
+            }),
+          },
+          containerStyle: {
+            marginVertical: 4,
+            opacity: props.disabled ? 0.5 : 1,
+          },
+          renderErrorMessage: false,
+          labelStyle: {
+            fontWeight: "500",
+          },
+          errorStyle: {
+            fontWeight: "bold",
+          },
+        };
+      },
+      FAB(props, theme) {
+        return {
+          color: theme.colors.tint,
+          placement: "right",
+          icon: { color: theme.colors.palette.accents8 },
+        };
+      },
+      Header(props, theme) {
+        return {
+          backgroundColor: theme.colors.tabBackground,
+          containerStyle: {
+            marginBottom: 0,
+          },
+          leftComponent: {
+            color: theme.colors.palette.accents1,
+            style: {
+              color: theme.colors.palette.accents1,
+              fontSize: 18,
+            },
+          },
+          centerComponent: {
+            color: theme.colors.palette.accents1,
+            style: {
+              color: theme.colors.palette.accents1,
+              fontSize: 18,
+            },
+          },
+          rightComponent: {
+            color: theme.colors.palette.accents1,
+            style: {
+              color: theme.colors.palette.accents1,
+              fontSize: 18,
+            },
+          },
+        };
+      },
     },
     mode: useColorScheme() ?? "light",
   });

@@ -16,6 +16,10 @@ declare module "@rneui/themed" {
     ButtonColor?: string;
   }
 
+  export interface InputProps {
+    mode?: "outlined" | "flat";
+  }
+
   export interface ComponentTheme {
     Text: Partial<TextProps>;
     Button: Partial<ButtonProps>;
