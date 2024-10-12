@@ -14,6 +14,11 @@ import { LogBox } from "react-native";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  /**
+   * Set the theme for the app.
+   * Edit the `createTheme` function below to customize the theme. You can edit the colors, components defaults, etc.
+   * See: https://reactnativeelements.com/docs/customizing for exact details.
+   */
   const theme = createTheme({
     lightColors: {
       background: "#ffffff",
