@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: theme.colors.background,
     flex: 1,
-    paddingHorizontal: 16,
+    paddingHorizontal: 8,
     paddingVertical: 8,
   },
 }));
