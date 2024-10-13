@@ -171,6 +171,14 @@ export default function RootLayout() {
           },
         };
       },
+      Skeleton(props, theme) {
+        return {
+          height: 100,
+          skeletonStyle: {
+            backgroundColor: theme.colors.palette.accents5,
+          },
+        };
+      },
     },
     mode: useColorScheme() ?? "light",
   });
