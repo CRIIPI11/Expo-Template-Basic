@@ -1,9 +1,18 @@
-import { Image, StyleSheet, Platform, View } from "react-native";
+import MainView from "@/components/core/MainView";
+import { makeStyles, Text } from "@rneui/themed";
 
 export default function HomeScreen() {
-  return <View></View>;
+  const styles = useStyles();
+  return (
+    <MainView style={styles.container}>
+      <Text>Home Screen</Text>
+    </MainView>
+  );
 }
 
-const styles = StyleSheet.create({
-
-});
+const useStyles = makeStyles((theme) => ({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+}));
