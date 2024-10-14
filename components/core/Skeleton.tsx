@@ -78,7 +78,11 @@ const Skeleton = ({
           )
         : Array.from({ length: useRenderNumber(renderNumber) }, (_, index) => (
             <View style={{ marginVertical: 4 }}>
-              <RNESkeleton width={width || "100%"} height={height || 85} />
+              <RNESkeleton
+                // @ts-expect-error
+                width={width || "100%"}
+                height={height || 85}
+              />
             </View>
           ))}
     </View>
