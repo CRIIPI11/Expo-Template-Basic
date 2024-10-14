@@ -201,7 +201,16 @@ export default function RootLayout() {
     <ThemeProvider theme={theme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+        <Stack.Screen
+          name="+not-found"
+          options={{
+            title: "Oops!",
+            headerTintColor: theme.mode === "light" ? "#000" : "#fff",
+            headerStyle: {
+              backgroundColor: theme.mode === "light" ? "#eaeaea" : "#444",
+            },
+          }}
+        />
       </Stack>
     </ThemeProvider>
   );
