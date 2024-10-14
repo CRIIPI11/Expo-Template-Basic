@@ -1,50 +1,94 @@
-# Welcome to your Expo app 👋
+# Basic Expo-Template with RNE UI
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This template is intended to increase productivity and lower setup time when creating a new Expo project. It comes pre-configured with useful libraries for UI, state management, and utilities.
 
-## Get started
+## Table of Contents
 
-1. Install dependencies
+
+- [Basic Expo-Template with RNE UI](#basic-expo-template-with-rne-ui)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Configuration](#configuration)
+    - [Customizing UI Components](#customizing-ui-components)
+    - [State Management with Zustand](#state-management-with-zustand)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
+
+## Features
+
+- **React Native Elements**: Main UI library with pre-modified components for a unique look.
+- **Zustand**: Lightweight and fast state management library.
+- **Expo Image**: Enhanced image handling over the default React Native Image component.
+- **FlashList**: High-performance list rendering for large datasets.
+- **React Native MMKV**: Efficient storage solution over of Async Storage.
+
+## Getting Started
+
+Follow these instructions to get your project up and running.
+
+### Prerequisites
+
+No specific prerequisites are needed beyond the standard Expo environment.
+
+### Installation
+
+1. **Create New Expo App With Template**
 
    ```bash
-   npm install
+   npx create-expo-app --template https://github.com/CRIIPI11/Expo-Template-Basic.git
    ```
 
-2. Start the app
+## Configuration
 
-   ```bash
-    npx expo start
-   ```
+### Customizing UI Components
 
-In the output, you'll find options to open the app in a
+The template includes color palettes and pre-modified components from **React Native Elements** to provide a unique starting point. You can further customize these components:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Navigate to the `app/_layout.tsx` file.
+- Locate the `components` object inside the `theme` variable at line [22]
+  
+   ```JSON
+   const theme = createTheme({
+   lightColors: {...},
+   darkColors: {...},
+   components: {...},
+  });
+  ```
+- Modify the colors, component styles and props as needed. (If you want to include and extra color name or prop, make sure you add properly add them in the `themed.d.ts` to avoid ts error)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+For more detail information about custom styling please visit [React Native Elements Customization Overview](https://reactnativeelements.com/docs/customizing)
 
-## Get a fresh project
+### State Management with Zustand
 
-When you're ready, run:
+State management is handled by **Zustand**:
 
-```bash
-npm run reset-project
-```
+- Use thhe `zustand/` directory to add store files
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+For more detail information visit [Zustand Official Docs](https://zustand.docs.pmnd.rs/getting-started/introduction)
 
-## Learn more
+## Contributing
 
-To learn more about developing your project with Expo, look at the following resources:
+Contributions are welcome! Here's how you can help:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. **Fork** the repository.
+2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`).
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
+4. **Push** to the branch (`git push origin feature/AmazingFeature`).
+5. **Open** a Pull Request.
 
-## Join the community
+## License
 
-Join our community of developers creating universal apps.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Acknowledgments
+
+- [Expo](https://expo.dev/)
+- [React Native Elements](https://reactnativeelements.com/)
+- [Zustand](https://github.com/pmndrs/zustand)
+- [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)
+- [FlashList](https://shopify.github.io/flash-list/)
+- [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)
