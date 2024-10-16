@@ -71,6 +71,7 @@ export default function RootLayout() {
         return {
           style: {
             textAlign: props.align ?? "left",
+            textDecorationLine: props.underline ? "underline" : "none",
             color: theme.colors.text,
             fontWeight: props.bold ? "bold" : "normal",
             marginVertical: 4,
