@@ -70,6 +70,7 @@ export default function RootLayout() {
       Text(props, theme) {
         return {
           style: {
+            textAlign: props.align ?? "left",
             color: theme.colors.text,
             fontWeight: props.bold ? "bold" : "normal",
             marginVertical: 4,
