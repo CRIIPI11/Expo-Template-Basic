@@ -21,6 +21,10 @@ declare module "@rneui/themed" {
     mode?: "outlined" | "flat";
   }
 
+  export interface DividerProps {
+    line?: boolean;
+    margin?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+  }
   export interface ComponentTheme {
     Text: Partial<TextProps>;
     Button: Partial<ButtonProps>;
