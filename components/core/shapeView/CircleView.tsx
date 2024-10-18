@@ -40,22 +40,26 @@ const CircleView = ({
   children,
   size,
   position,
+  style,
   ...props
 }: CircleViewProps) => {
   return (
     <View
-      style={{
-        borderWidth: 0.5,
-        width: useSize(size),
-        height: useSize(size),
-        borderRadius: useSize(size) / 2,
-        justifyContent: "center",
-        alignItems: usePosition(position),
-        alignSelf: "center",
-        overflow: "hidden",
-        paddingVertical: 8,
-        paddingHorizontal: 8,
-      }}
+      style={[
+        {
+          borderWidth: 0.5,
+          width: useSize(size),
+          height: useSize(size),
+          borderRadius: useSize(size) / 2,
+          justifyContent: "center",
+          alignItems: usePosition(position),
+          alignSelf: "center",
+          overflow: "hidden",
+          paddingVertical: 8,
+          paddingHorizontal: 8,
+        },
+        style,
+      ]}
       {...props}
     >
       {children}

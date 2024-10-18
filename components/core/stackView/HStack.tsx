@@ -62,15 +62,24 @@ const usePosition = (position: HStackProps["position"]) => {
  * The `position` prop can be used to specify how the elements should be laid out.
  *
  */
-const HStack = ({ children, spacing, reversed, ...props }: HStackProps) => {
+const HStack = ({
+  children,
+  spacing,
+  reversed,
+  style,
+  ...props
+}: HStackProps) => {
   return (
     <View
-      style={{
-        flexDirection: reversed ? "row-reverse" : "row",
-        gap: useSpacing(spacing),
-        alignSelf: usePosition(props.position),
-        marginVertical: 4,
-      }}
+      style={[
+        {
+          flexDirection: reversed ? "row-reverse" : "row",
+          gap: useSpacing(spacing),
+          alignSelf: usePosition(props.position),
+          marginVertical: 4,
+        },
+        style,
+      ]}
       {...props}
     >
       {children}

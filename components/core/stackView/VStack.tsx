@@ -63,15 +63,24 @@ const usePosition = (position: VStackProps["position"]) => {
  * The `position` prop can be used to specify how the elements should be laid out.
 
  */
-const VStack = ({ children, spacing, reversed, ...props }: VStackProps) => {
+const VStack = ({
+  children,
+  spacing,
+  reversed,
+  style,
+  ...props
+}: VStackProps) => {
   return (
     <View
-      style={{
-        flexDirection: reversed ? "column-reverse" : "column",
-        gap: useSpacing(spacing),
-        alignSelf: usePosition(props.position),
-        marginVertical: 4,
-      }}
+      style={[
+        {
+          flexDirection: reversed ? "column-reverse" : "column",
+          gap: useSpacing(spacing),
+          alignSelf: usePosition(props.position),
+          marginVertical: 4,
+        },
+        style,
+      ]}
       {...props}
     >
       {children}
