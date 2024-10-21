@@ -1,3 +1,4 @@
+import { useTheme } from "@rneui/themed";
 import { View, ViewProps } from "react-native";
 
 type CircleViewProps = {
@@ -43,11 +44,14 @@ const CircleView = ({
   style,
   ...props
 }: CircleViewProps) => {
+  const { theme } = useTheme();
+
   return (
     <View
       style={[
         {
           borderWidth: 0.5,
+          borderColor: theme.colors.palette.accents4,
           width: useSize(size),
           height: useSize(size),
           borderRadius: useSize(size) / 2,
