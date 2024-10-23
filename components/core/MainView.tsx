@@ -4,9 +4,11 @@ import {
   SafeAreaViewProps,
 } from "react-native-safe-area-context";
 import { useHeaderHeight } from "@react-navigation/elements";
-import { View } from "react-native";
+import { ScrollView, ScrollViewProps, View } from "react-native";
 
 type MainViewProps = {
+  scrollable?: boolean;
+  scrollViewProps?: ScrollViewProps;
   withHeader?: boolean;
   headerLeftComponent?: HeaderProps["leftComponent"];
   headerCenterComponent?: HeaderProps["centerComponent"];
@@ -51,6 +53,8 @@ type PropsNoHeader = MainViewProps & OptionalHeaderProps;
 const MainView = ({
   children,
   style,
+  scrollable,
+  scrollViewProps,
   withHeader,
   headerLeftComponent,
   headerCenterComponent,
@@ -71,7 +75,19 @@ const MainView = ({
         />
       )}
       <Container style={[styles.container, style]} {...props}>
-        {children}
+        {scrollable ? (
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            automaticallyAdjustKeyboardInsets={true}
+            keyboardDismissMode="on-drag"
+            {...scrollViewProps}
+          >
+            {children}
+          </ScrollView>
+        ) : (
+          children
+        )}
       </Container>
     </>
   );
