@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
-import { createTheme, DividerProps, ThemeProvider } from "@rneui/themed";
+import { createTheme, ThemeProvider } from "@rneui/themed";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { LogBox } from "react-native";
 
@@ -12,23 +12,6 @@ import { LogBox } from "react-native";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
-
-const useDividerSpacing = (value: DividerProps["margin"]): number => {
-  switch (value) {
-    case "sm":
-      return 8;
-    case "md":
-      return 16;
-    case "lg":
-      return 24;
-    case "xl":
-      return 32;
-    case "xxl":
-      return 48;
-    default:
-      return 4;
-  }
-};
 
 export default function RootLayout() {
   /**
@@ -196,12 +179,6 @@ export default function RootLayout() {
           skeletonStyle: {
             backgroundColor: theme.colors.palette.accents5,
           },
-        };
-      },
-      Divider(props, theme) {
-        return {
-          color: props.line ? theme.colors.grey0 : "transparent",
-          style: { marginVertical: useDividerSpacing(props.margin) },
         };
       },
     },
